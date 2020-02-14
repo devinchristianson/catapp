@@ -8,5 +8,4 @@ RUN go build -o /go/bin/server
 FROM alpine 
 COPY --from=builder /go/bin/server /server
 COPY --from=builder /go/src/catapp/index.gohtml /index.gohtml
-EXPOSE 8082
 ENTRYPOINT ["/server"]
